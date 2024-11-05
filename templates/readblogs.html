@@ -1,0 +1,17 @@
+{% extends '_base.html' %}
+{% block title %}Read Blogs{% endblock title %}
+
+{% block content %}
+    {% for blog in blogs %}
+        <div class="">
+            <small>
+            {{ blog.title }}
+            {{ blog.first_name }}
+            {{ blog.last_name}}
+            on {{ blog.date }}
+            </small>
+            <br>
+            <p>{{ blog.body|slice:":200"|safe }} <a href="{% url 'readblogdetails' blog.pk %}">Read more.......</a></p>
+        </div>
+    {% endfor %}
+{% endblock content %}

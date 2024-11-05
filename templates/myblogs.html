@@ -1,0 +1,20 @@
+{% extends '_base.html' %}
+{% block title %}{{ user.username}}'s Blog{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'create' %}">+ Add Blog</a>
+    {% for blog in blogs %}
+    <div class="">
+        <small>
+        {{ blog.title }}
+        {{ blog.first_name }}
+        {{ blog.last_name}}
+        on {{ blog.date }}
+        </small>
+        <a href="{% url 'update' blog.pk %}">Edit</a>
+        <a href="{% url 'delete' blog.pk %}">Delete</a>
+        <br>
+        <p>{{ blog.body|slice:":200"|safe }} <a href="{% url 'readblogdetails' blog.pk %}">Read more.......</a></p>
+    </div>
+    {% endfor %}
+{% endblock content %}
