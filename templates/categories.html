@@ -1,0 +1,26 @@
+{% extends '_base.html' %}
+{% block title %}{{ cats }}{% endblock title %}
+
+{% block content %}
+    {% if category_posts %}
+        <h1>{{ cats }}</h1>
+        <ul>
+            {% for post in category_posts %}
+                <div class="">
+                    <small>
+                    {{ post.title }}
+                    {{ post.first_name }}
+                    {{ post.last_name}}
+                    on {{ post.date }}
+                    </small>
+                    <br>
+                    <p>{{ post.body|slice:":200"|safe }} <a href="{% url 'readblogdetails' post.pk %}">Read more.......</a></p>
+                </div>
+            {% endfor %}
+        </ul>
+    {% else %}
+        Sorry This Page does not exist
+    {% endif %}
+    
+{% endblock content %}
+z

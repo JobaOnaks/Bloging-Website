@@ -38,7 +38,7 @@ def signup_user(request):
             messages.success(request, ("Account has been created"))
             return redirect('home')
         else:
-            messages.sucess(request, ("An Error Occured \nTry agin....."))
+            messages.success(request, ("An Error Occured \nTry agin....."))
             return redirect('signup')
     else:
         form = CustomUserCreationForm()

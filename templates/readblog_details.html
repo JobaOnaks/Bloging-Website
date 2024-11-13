@@ -9,4 +9,22 @@
     by {{ post.author }}
     <br><br>
     {{ post.body|safe}}
+    <br>
+    <hr>
+    <h1>Comments....</h1>
+    {% if post.comments.all %}
+    <a href="{% url 'add_comment' post.pk %}">Add One</a>
+    <br><br>
+        {% for comment in post.comments.all %}
+            <strong>
+                {{ comment.name }}
+                {{ comment.date }}
+            </strong>
+            <br>
+            {{ comment.body  }}
+            <br><br>
+        {% endfor %}
+    {% else %}
+            No Comments Yet..... <a href="{% url 'add_comment' post.pk %}">Add One</a>
+    {% endif %}
 {% endblock content %}

@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="shortcut icon" href="{% static 'images/favicon-32x32.png' %}" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
     {% if messages %}
@@ -14,12 +17,15 @@
         {% endfor %}
     {% endif %}
     <div class="nav">
-        <h1 class="logo">MINDSTREAMS</h1>
+        <div class="logo">
+            <a href="{% url 'home' %}" class="titlelink"></a><img src="{% static 'images/img1.jpg' %}" alt="Trinity University Logo"></a>
+          </div>
         <div class="top">
             {% if user.is_authenticated %}
-                <p>Welcome {{ user.username }}</p> | <a href="{% url 'logout' %}">Log Out</a> | <a href="{% url 'myblog' %}">My blog</a> 
+                <p>Welcome {{ user.username }} <a href="{% url 'logout' %}">Log Out</a>  <a href="{% url 'myblog' %}">My blog</a> </p> 
             {% else %}
-                <a href="{% url 'signup' %}">Sign Up</a> | <a href="{% url 'login' %}">Log In</a>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Log In</a></li>
             {% endif %}
         </div>
     </div>

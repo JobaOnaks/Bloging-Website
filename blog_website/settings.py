@@ -133,8 +133,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 AUTH_USER_MODEL = 'users.CustomUser'
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
-CKEDITOR_CONFIGS ={
-    'default':{
-        'toolbar': 'full'
-    }
-}
+# CKEDITOR_CONFIGS ={
+#     'default':{
+#         'toolbar': 'full'
+#     }
+# }

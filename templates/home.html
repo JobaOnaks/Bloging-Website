@@ -1,14 +1,28 @@
-{% extends "_base.html" %}
+{% extends "_base.html" %}`
 {% load static %}
 {% block title %}Home{% endblock title %}
 
 {% block content %}
     <div class="content">
-        <div class="content_img1">
+        <div class="sect1">
+            <h1>
+                Welcome to TU Mindstreams!
+            </h1>
+            <p>
+                TU Mindstreams serves as a digital space for curious minds to connect, learn, and inspire each other. Our goal is to cultivate a community where writers and readers can explore ideas that spark reflection, creativity, and knowledge. Whether you're looking to express yourself, gain new insights, or connect with like-minded individuals, TU Mindstreams is where your thoughts can flow freely. Join us in the stream of ideas and let your mind wander!
+            </p>
+            <br>
             <a href="{% url 'readblog' %}" class="readblogs">Read Blogs</a>
         </div>
-        <div class="content_img2">
-            <a href="" class=""></a>
-        </div>
     </div>
+
+    <footer>
+        <p>&copy; My Blog 2024</p>
+        <div class="social-media">
+          <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-tiktok"></ion-icon></i></a>
+        </div>
+    </footer>
 {% endblock content %}
